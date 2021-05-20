@@ -1,0 +1,23 @@
+{
+  "name": "jec_quora",
+  "version": "1.0.0",
+  "description": "JEC Quora is a website where questions are asked, answered by users, Majorily Related to JEC, Jabalpur and also Contains Some notes of College Subject.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyanand235/JEC_QUORA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luckyanand235/JEC_QUORA/issues"
+  },
+  "homepage": "https://github.com/luckyanand235/JEC_QUORA#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
