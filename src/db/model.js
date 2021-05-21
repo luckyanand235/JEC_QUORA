@@ -80,4 +80,19 @@ const Answers = db.define('answers', {
     } 
 })
 
-const 
+
+Users.hasMany(Questions)
+Questions.belongsTo(Users)
+
+Questions.hasMany(Answers)
+Answers.belongsTo(Questions)
+
+Users.hasMany(Answers)
+Answers.belongsTo(Users)
+
+module.exports = {
+    db,
+    Users,
+    Questions,
+    Answers
+}
