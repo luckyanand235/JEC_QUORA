@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize')
-const sequelize = require('sequelize')
+// const { all } = require('sequelize/types/lib/operators')
+// const Sequelize = require('sequelize')
 
 const db = new Sequelize({
     dialect: 'mysql',
@@ -9,7 +10,7 @@ const db = new Sequelize({
 })
 
 const COL_ID_DEF = {
-    type: sequelize.DataTypes.INTEGER,
+    type: Sequelize.DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
 }
@@ -21,12 +22,12 @@ const COL_USERNAME_DEF = {
 }
 
 const COL_QUESTION_DEF = {
-    type: sequelize.DataTypes.STRING(200),
+    type: Sequelize.DataTypes.STRING(200),
     allowNull: false
 }
 
 const COL_ANSWER_DEF = {
-    type: sequelize.DataTypes.STRING(500),
+    type: Sequelize.DataTypes.STRING(500),
     allowNull: false
 }
 
@@ -37,20 +38,28 @@ const Users = db.define('user', {
     id: COL_ID_DEF,
     username: COL_USERNAME_DEF,
     rollno: {
-        type: sequelize.DataTypes.STRING(15),
-        allowNull: false,
+        type: Sequelize.DataTypes.STRING(15),
+        allowNull: true,
         unique: true
     },
     name: {
-        type: sequelize.DataTypes.STRING(25),
+        type: Sequelize.DataTypes.STRING(25),
         allowNull: false
     },
     branch: {
-        type: sequelize.DataTypes.STRING(3),
-        allowNull: false
+        type: Sequelize.DataTypes.STRING(3),
+        allowNull: true
     },
     semester: {
-        type: sequelize.DataTypes.INTEGER,
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: true
+    },
+    college: {
+        type: Sequelize.DataTypes.STRING(100),
+        allowNull: true
+    },
+    password: {
+        type: Sequelize.DataTypes.STRING(100),
         allowNull: false
     }
 
@@ -62,10 +71,10 @@ const Questions = db.define('question', {
     id: COL_ID_DEF,
     que: COL_QUESTION_DEF,
     upvote: {
-        type: sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     },
     downvotes: {
-        type: sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     }
 })
 
@@ -73,10 +82,10 @@ const Answers = db.define('answers', {
     id: COL_ID_DEF,
     ans: COL_ANSWER_DEF,
     upvote: {
-        type: sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     },
     downvotes: {
-        type: sequelize.DataTypes.INTEGER
+        type: Sequelize.DataTypes.INTEGER
     } 
 })
 
