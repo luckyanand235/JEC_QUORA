@@ -3,6 +3,8 @@ const dotenv = require('dotenv')
 
 const { db } = require('./db/model')
 const { userRoute } = require('./routes/users/index')
+const { questionRoute } = require('./routes/questions/index')
+const { answerRoute } = require('./routes/answers/index')
 const { urlencoded } = require('express')
 
 
@@ -19,6 +21,8 @@ app.use(urlencoded({extended: true}))
 
 
 app.use('/api/users', userRoute)
+app.use('/api/questions', questionRoute)
+app.use('/api/answers', answerRoute)
 
 app.use('/', express.static(__dirname + '/public'))
 

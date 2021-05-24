@@ -23,7 +23,7 @@ route.get('/:username', async(req, res) => {
             error: 'No such username exist'
         })
     }
-    console.log(user)
+    // console.log(user)
 })
 
 route.post('/', async(req, res) => {
