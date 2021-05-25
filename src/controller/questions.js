@@ -12,10 +12,15 @@ async function getAllQuestions() {
     return await Questions.findAll()
 }
 
+async function getAllQuestionsOfAUser(userId) {
+    return await Questions.findAll({where : { userId: userId }})
+}
+
 
 
 
 module.exports = {
     createQuestion,
-    getAllQuestions
+    getAllQuestions,
+    getAllQuestionsOfAUser
 }
