@@ -9,14 +9,16 @@ const {
 
 const route = Router()
 
-route.get('/:username', async(req, res) => {
+route.get('/:username/:password', async(req, res) => {
     let user;
 
     const username = req.params.username
+    const password = req.params.password
+    console.log(password)
     console.log(username)
     user = await getUserByUsername(username)
 
-    if(user) {
+    if(user && user.password == password) {
         res.status(200).send(user)
     } else {
         res.status(404).send({

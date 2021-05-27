@@ -26,7 +26,7 @@ app.use('/api/answers', answerRoute)
 
 app.use('/', express.static(__dirname + '/public'))
 
-db.sync()
+db.sync(/*{force: true}*/)
     .then(() => {
         app.listen(PORT, ()=> console.log(`Server is started at ${process.env.URL}:${PORT}`))
     })

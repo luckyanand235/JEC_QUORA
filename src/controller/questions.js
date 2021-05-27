@@ -1,4 +1,5 @@
-const { Questions } = require('../db/model')
+const { Questions, Users } = require('../db/model')
+
 
 async function createQuestion(userId, que) {
     const question = await Questions.create({
@@ -9,7 +10,10 @@ async function createQuestion(userId, que) {
 }
 
 async function getAllQuestions() {
-    return await Questions.findAll()
+    const questions = await Questions.findAll({
+        include: [ Users ]
+    })
+    return questions
 }
 
 async function getAllQuestionsOfAUser(userId) {

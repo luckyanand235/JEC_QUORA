@@ -18,12 +18,12 @@ const COL_ID_DEF = {
 const COL_USERNAME_DEF = {
     type: Sequelize.DataTypes.STRING(30),
     unique: true,
-    allowNull: false
+    allowNull: false,
 }
 
 const COL_QUESTION_DEF = {
     type: Sequelize.DataTypes.STRING(200),
-    allowNull: false
+    allowNull: false,
 }
 
 const COL_ANSWER_DEF = {
