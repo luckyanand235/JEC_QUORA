@@ -17,6 +17,11 @@ function loadQuestions() {
             )
         }
     })
-    
 
 }
+
+$('#navbarDropdown').text(currentUser.name)
+
+$('#postQue').on("click", function() {
+    $('#content').load('../components/post_que/post_que.html')
+})

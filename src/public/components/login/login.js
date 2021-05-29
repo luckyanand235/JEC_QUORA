@@ -3,14 +3,13 @@ function removeUnnecessary() {
     $('form').width('inline')
 }
 
-(() => {
-    $('#signin').click(() => {
+// (() => {
+//     $('#signin').click(() => {
         
-    })
-})
+//     })
+// })
 
 function loginUser() {
-    console.log('clicked')
         let username = $('#email').val()
         let password = $('#password').val()
         $.get('/api/users/' + username+'/'+password, (user) => {
@@ -18,8 +17,8 @@ function loginUser() {
             currentUser = user
             window.localStorage.user = JSON.stringify(user)
             $('.navbar-nav').show()
-            
-        })
+    })
+
 }
 
 removeUnnecessary()
