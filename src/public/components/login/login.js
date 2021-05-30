@@ -21,4 +21,8 @@ function loginUser() {
 
 }
 
+function registerUser() {
+    $('#content').load('../../components/register_user/register_user.html')
+}
+
 removeUnnecessary()

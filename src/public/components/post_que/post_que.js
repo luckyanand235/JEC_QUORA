@@ -1,6 +1,3 @@
-$('#home').on("click", function() {
-    $('#content').load('../../components/all_que/all_que.html')
-})
 
 function createQue() {
     let userId = window.currentUser.id
@@ -22,3 +19,20 @@ function writeQue(userId, que) {
     })
     
 }
+
+// All Questions
+$('#home').on("click", function() {
+    $('#content').load('../../components/all_que/all_que.html')
+})
+
+
+// My Profile
+$('#myProfile').on("click", function() {
+    $('#content').load('../components/my_profile/my_profile.html')
+})
+
+// My Questions
+
+$('#myQue').on("click", function() {
+    $('#content').load('../components/my_que/my_que.html')
+})

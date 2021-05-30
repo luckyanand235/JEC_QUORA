@@ -1,4 +1,4 @@
-const { Questions, Users } = require('../db/model')
+const { Questions, Users, Answers } = require('../db/model')
 
 
 async function createQuestion(userId, que) {
@@ -11,13 +11,19 @@ async function createQuestion(userId, que) {
 
 async function getAllQuestions() {
     const questions = await Questions.findAll({
-        include: [ Users ]
+        include: [ Users ],
+        order: [['updatedAt', 'DESC']]
     })
     return questions
 }
 
 async function getAllQuestionsOfAUser(userId) {
-    return await Questions.findAll({where : { userId: userId }})
+    return await Questions.findAll({
+        where : { userId: userId }
+        }, {
+        include: [ Answers ],
+        order: [['updatedAt', 'DESC']]
+    })
 }
 
 

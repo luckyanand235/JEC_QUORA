@@ -1,0 +1,41 @@
+
+<div class="container my-2">
+    <h2>Register User</h2>
+
+    <div class="form-outline mb-4">
+        <input type="email" id="email" class="form-control" />
+        <label class="form-label" for="email">Email address</label>
+    </div>
+    
+      <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="password" class="form-control" />
+        <label class="form-label" for="password">Password</label>
+    </div>
+    
+
+    <div class="form-outline mb-4">
+        <input type="text" id="name" class="form-control" />
+        <label class="form-label" for="name">Name</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="rememberme"
+              checked
+            />
+            <label class="form-check-label" for="form1Example3"> Remember me </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-secondary btn-block" onclick="registerUser()">Register</button>
+</div>
+
+<script src="../../components/register_user/register_user.js"></script>

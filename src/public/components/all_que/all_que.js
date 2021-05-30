@@ -22,6 +22,20 @@ function loadQuestions() {
 
 $('#navbarDropdown').text(currentUser.name)
 
+
+// Post Question
 $('#postQue').on("click", function() {
     $('#content').load('../components/post_que/post_que.html')
+})
+
+// My Profile Section
+
+$('#myProfile').on("click", function() {
+    $('#content').load('../components/my_profile/my_profile.html')
+})
+
+// My Questions
+
+$('#myQue').on("click", function() {
+    $('#content').load('../components/my_que/my_que.html')
 })
