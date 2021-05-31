@@ -1,0 +1,30 @@
+
+
+<style>
+    form {
+        width: 90%;
+        margin: auto;
+    }
+    button {
+        width: 30%;
+        margin-left: 30%;
+        margin-top: 20px;
+        
+    }
+</style>
+
+<div class="container my-2">
+    <h3>Post Ans to Question : </h3>
+    <p id="que_body">que_body</p>
+    <hr>
+    <form>
+        <div class="form-group">
+          <label for="inpQue">Write Your Answer</label>
+          <textarea class="form-control" id="inpAns" rows="4" required></textarea>
+        </div>
+        <button onclick="createAnsToGivenQue()" type="submit" class="btn btn-primary btn-block">Post</button>
+    </form>
+</div>
+
+
+<script src="../../components/post_ans/post_ans.js"></script>

@@ -32,5 +32,5 @@ async function getAllQuestionsOfAUser(userId) {
 module.exports = {
     createQuestion,
     getAllQuestions,
-    getAllQuestionsOfAUser
+    getAllQuestionsOfAUser,
 }

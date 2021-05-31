@@ -1,4 +1,4 @@
-const { Answers } = require('../db/model')
+const { Answers, Users } = require('../db/model')
 
 async function createAnswer(userId, questionId, ans) {
     const answer = await Answers.create({
@@ -10,9 +10,22 @@ async function createAnswer(userId, questionId, ans) {
 }
 
 async function getAllAnsToQuestion(questionId) {
-    return await Answers.findAll({where: { questionId: questionId }})
+    return await Answers.findAll({where: { questionId: questionId }, 
+        include: [Users]
+    })
+}
+
+async function getTopThreeQue(questionId) {
+    return await Answers.findAll({
+        where: {
+            questionId: questionId
+        },
+        limit: 3,
+        order: ['upvote', 'DESC'],
+        order: ['updateAt', 'DESC']
+    })
 }
 
 module.exports = {
-    createAnswer, getAllAnsToQuestion
+    createAnswer, getAllAnsToQuestion, getTopThreeQue
 }
