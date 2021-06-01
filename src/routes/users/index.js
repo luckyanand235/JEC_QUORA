@@ -28,6 +28,18 @@ route.get('/:username/:password', async(req, res) => {
     // console.log(user)
 })
 
+route.post('/edit_profile', async (req, res) => {
+    const { username, password, rollno, branch, semester, college } = req.body
+    if ((!username) || (!password)) {
+        return res.status(400).send({
+            error: "Need Username and Password"
+        })
+    }
+    
+    const user =  await completeUserProfile( username, password, rollno, branch, semester, college)
+    res.status(201).send(user)
+})
+
 route.post('/', async(req, res) => {
     const { username, name, password } = req.body
     // console.log(username, name, password)

@@ -19,16 +19,20 @@ async function getUserByUsername(username) {
     return await Users.findOne({ where : {username}})
 }
 
-async function completeUserProfile(username, password, rollno, branch, semester, college) {
+async function completeUserProfile( username, password, rollno, branch, semester, college) {
     const user = await getUserByUsername(username)
+    
     if(userVerification(user, username, password)) {
         user.update({
+            
             rollno: rollno,
             branch: branch,
             semester: semester,
             college: college
         })
     }
+    user.save()
+    // console.log(user)
     return user;
 }
 

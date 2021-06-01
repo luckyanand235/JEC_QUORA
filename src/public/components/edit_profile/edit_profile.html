@@ -2,4 +2,43 @@
 <div class="container my-2">
     <h1>Edit Profile</h1>
     
+
+    <form>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="rollno">Roll Number</label>
+          <input type="text" class="form-control" id="rollno" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="branch">Branch</label>
+          <input type="text" class="form-control" id="branch" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <input type="number" min="1" max="8" class="form-control" id="semester" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="college">College</label>
+          <input type="text" class="form-control" id="college" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" onclick="editUserProfile()">Submit</button>
+    </form>
+
+
+
 </div>
+
+<script src="../../components/edit_profile/edit_profile.js"></script>

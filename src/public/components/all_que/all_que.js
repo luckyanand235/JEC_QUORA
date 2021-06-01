@@ -6,35 +6,18 @@ function loadQuestions() {
             $('#question-container').append(
                 $(`
                 <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                    
                     <div class="card-body">
-                        <h5 class="card-title">${q.user.name}</h5>
-                        <p class="card-text">${q.que}</p>
+                        <p class="card-title">${q.user.name}</p>
+                        <a class="queBody" href="#" onclick="ansToQue('${q.id}','${q.que}')"><h5 class="card-text">${q.que}</h5></a>
+                        <br>
                         <a href="#" class="btn btn-primary" onclick="postAns('${q.que}', '${q.id}')">Answer this Quesstion</a>
                     </div>
                     <hr>
-                    <div class="column" id="answer-container">
-                    </div>
+                    <br>
                 </div>
                 `)
             )
-            
-            $.get('/api/answers/' + 11, (answers) => {
-                for (let a of answers) {
-                   $('#answer-container').append(
-                       $(`
-                            <hr>
-                        
-                            <div class="card-body">
-                            <h5 class="card-title">${a.user.name}</h5>
-                            <p class="card-text">${a.ans}</p>
-                            
-                            </div>
-                        
-                       `)
-                   )
-                }
-            })
         }
     })
 
@@ -67,3 +50,11 @@ $('#myProfile').on("click", function() {
 $('#myQue').on("click", function() {
     $('#content').load('../components/my_que/my_que.html')
 })
+
+// Ans to Que
+
+function ansToQue(id, queBody) {
+    $('#content').load("./../components/ans_to_que/ans_to_que.html")
+    window.current_que_body = queBody
+    window.current_que_id = id
+}

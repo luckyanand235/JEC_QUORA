@@ -1,33 +1,33 @@
+
 <style>
     .card {
         width: 80vw;
         margin-left: auto;
         margin-right: auto;
     }
-    .queBody {
+    .ansBody {
         text-decoration: none;
     }
-    .queBody h5 {
+    .ansBody h5 {
         color: black;
         font-weight: bold;
         font-size: x-large;
     }
 </style>
 
-
 <div class="container my-2">
-    <h1 class="h1 text-center">Recent Questons</h1>
-    <div class="column" id="question-container">
-        
+    <h3>Ans to Question : </h3>
+    <br>
+    <h4 id="queBody"></h4>
+    <br>
+    <div id="answer-container">
+
     </div>
 
-    
 </div>
 
 
-
-
-<script src="../../components/all_que/all_que.js"></script>
+<script src="../../components/ans_to_que/ans_to_que.js"></script>
 <script>
-    loadQuestions()
+    loadAnswers()
 </script>
