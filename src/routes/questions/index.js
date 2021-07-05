@@ -10,9 +10,12 @@ const route = Router()
 
 
 route.get('/', async(req, res) => {
+    let userId = req.body.userId
     let questions;
-
-    questions = await getAllQuestions();
+    
+    
+    console.log(userId, typeof(userId))
+    questions = await getAllQuestions(userId);
 
     if(questions) {
         res.status(200).send(questions)

@@ -1,7 +1,7 @@
 
 function loadQuestions() {
-
-    $.get('/api/questions', (questions) => {
+    console.log(currentUser.id)
+    $.get('/api/questions', { userId: currentUser.id }, (questions) => {
         for(let q of questions) {
             $('#question-container').append(
                 $(`

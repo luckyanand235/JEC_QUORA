@@ -3,11 +3,6 @@ function removeUnnecessary() {
     $('form').width('inline')
 }
 
-// (() => {
-//     $('#signin').click(() => {
-        
-//     })
-// })
 
 function loginUser() {
         let username = $('#email').val()

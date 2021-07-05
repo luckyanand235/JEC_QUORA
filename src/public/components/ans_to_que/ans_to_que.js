@@ -38,3 +38,7 @@ function loadAnswers() {
         }
     })
 }
+
+function postAnswer() {
+    postAns(current_que_body, current_que_id)
+}

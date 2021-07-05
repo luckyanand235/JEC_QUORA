@@ -1,5 +1,5 @@
 const { Questions, Users, Answers } = require('../db/model')
-
+const { sequelize, Op, NUMBER } = require('sequelize')
 
 async function createQuestion(userId, que) {
     const question = await Questions.create({
@@ -9,10 +9,17 @@ async function createQuestion(userId, que) {
     return question
 }
 
-async function getAllQuestions() {
+async function getAllQuestions(userid) {
+    userid = Number(userid)
+    console.log(userid, typeof(userid))
     const questions = await Questions.findAll({
         include: [ Users ],
-        order: [['updatedAt', 'DESC']]
+        order: [['updatedAt', 'DESC']],
+        where: {
+            userId: {
+                [Op.not]: userid
+            }
+        }
     })
     return questions
 }
