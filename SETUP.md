@@ -31,4 +31,5 @@ npm i sequalize mysql2
     use JEC_quora_db;
 ```
 
-
+### Start Server
+lt --port 5000
